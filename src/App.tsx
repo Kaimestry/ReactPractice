@@ -1,6 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import "./App.css";
+
+import RootLayout from "./_root/RootLayout";
+import Home from "./_root/pages/Home";
+import Profile from "./_root/pages/Profile";
 
 function App() {
   return (
@@ -8,8 +11,10 @@ function App() {
       {/*Public Route*/}
 
       {/*Private Route*/}
-      <Route path="/" element={<Home />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route element={<RootLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+      </Route>
     </Routes>
   );
 }

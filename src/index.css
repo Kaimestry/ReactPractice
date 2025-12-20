@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ✅ Light mode defaults */
+:root {
+  /* your palette */
+  --color-primary-900: #253237;
+  --color-primary-700: #5c6b73;
+  --color-primary-500: #9db4c0;
+  --color-primary-300: #c2dfe3;
+  --color-primary-100: #e0fbfc;
+
+  /* semantic tokens (light) */
+  --bg-main: var(--color-primary-100);
+  --bg-muted: var(--color-primary-300);
+
+  --text-primary: var(--color-primary-900);
+  --text-secondary: var(--color-primary-700);
+  --text-muted: var(--color-primary-500);
+
+  --border-default: var(--color-primary-500);
+}
+
+/* ✅ Dark mode overrides */
+.dark {
+  --bg-main: var(--color-primary-900);
+  --bg-muted: #1f2a2e;
+
+  --surface-1: #2b3a40;
+  --surface-2: #31434a;
+
+  --border-default: rgba(157, 180, 192, 0.35);
+
+  --text-primary: var(--color-primary-100);
+  --text-secondary: var(--color-primary-300);
+  --text-muted: var(--color-primary-500);
+}
+
+@layer utilities {
+  .text-primary {
+    color: var(--text-primary);
+  }
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  .bg-main {
+    background-color: var(--bg-main);
+  }
+  .bg-muted {
+    background-color: var(--bg-muted);
+  }
+}
