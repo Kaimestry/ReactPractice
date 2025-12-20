@@ -5,6 +5,7 @@
 /* ✅ Light mode defaults */
 :root {
   /* your palette */
+  --color-highlight: #55d26c;
   --color-primary-900: #253237;
   --color-primary-700: #5c6b73;
   --color-primary-500: #9db4c0;
@@ -24,20 +25,27 @@
 
 /* ✅ Dark mode overrides */
 .dark {
+  --bg-highlight: var(--color-highlight);
   --bg-main: var(--color-primary-900);
   --bg-muted: #1f2a2e;
+  --bg-hover: var(--color-primary-700);
 
   --surface-1: #2b3a40;
   --surface-2: #31434a;
 
   --border-default: rgba(157, 180, 192, 0.35);
 
+  --text-highlight: var(--color-highlight);
   --text-primary: var(--color-primary-100);
   --text-secondary: var(--color-primary-300);
   --text-muted: var(--color-primary-500);
 }
 
 @layer utilities {
+  /* COLOR PALETE */
+  .text-highlight {
+    color: var(--color-highlight);
+  }
   .text-primary {
     color: var(--text-primary);
   }
@@ -48,10 +56,34 @@
     color: var(--text-muted);
   }
 
+  .bg-highlight {
+    background-color: var(--bg-highlight);
+  }
   .bg-main {
     background-color: var(--bg-main);
   }
   .bg-muted {
     background-color: var(--bg-muted);
+  }
+}
+
+@layer components {
+  /* NAV LINK */
+  .nav-link {
+    @apply text-sm flex items-center gap-2 px-2 py-2 rounded-md w-full;
+  }
+  .nav-link:hover {
+    background-color: var(--bg-hover);
+  }
+  .nav-title {
+    @apply text-xs text-muted ml-2;
+  }
+
+  /* action icon */
+  .action-icon {
+    @apply p-2 rounded-md;
+  }
+  .action-icon:hover {
+    background-color: var(--bg-hover);
   }
 }

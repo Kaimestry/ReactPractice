@@ -1,12 +1,5 @@
-:root[data-theme="dark"] {
-  --color-primary-900: #253237; /*darkest*/
-  --color-primary-700: #5c6b73;
-  --color-primary-500: #9db4c0;
-  --color-primary-300: #c2dfe3;
-  --color-primary-100: #e0fbfc; /*lightest*/
-}
+@import url("https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap");
 
 body {
-  background-color: #253237;
-  color: #e0fbfc;
+  font-family: "Tiktok sans";
 }
