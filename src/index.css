@@ -6,10 +6,10 @@
 :root {
   /* your palette */
   --color-highlight: #55d26c;
-  --color-primary-900: #253237;
-  --color-primary-700: #5c6b73;
-  --color-primary-500: #9db4c0;
-  --color-primary-300: #c2dfe3;
+  --color-primary-900: #22262c;
+  --color-primary-700: #5c676d;
+  --color-primary-500: #9fb0b9;
+  --color-primary-300: #c9dddf;
   --color-primary-100: #e0fbfc;
 
   /* semantic tokens (light) */
@@ -27,7 +27,7 @@
 .dark {
   --bg-highlight: var(--color-highlight);
   --bg-main: var(--color-primary-900);
-  --bg-muted: #1f2a2e;
+  --bg-muted: #242a32;
   --bg-hover: var(--color-primary-700);
 
   --surface-1: #2b3a40;
@@ -74,6 +74,12 @@
   }
   .nav-link:hover {
     background-color: var(--bg-hover);
+  }
+  .nav-link-action {
+    @apply text-sm flex items-center justify-center mt-1 gap-1 px-2 py-2 rounded-md
+    bg-highlight font-semibold
+    hover:opacity-80;
+    color: var(--bg-main);
   }
   .nav-title {
     @apply text-xs text-muted ml-2;
