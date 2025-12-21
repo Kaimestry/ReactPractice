@@ -95,8 +95,7 @@
 
   /* REPORT ITEMS */
   .report-item {
-    @apply flex-grow rounded-md p-4 flex justify-center;
+    @apply flex-grow flex-wrap rounded-md p-4 flex justify-center gap-3;
     background-color: var(--bg-muted);
-    height: 300px;
   }
 }
