@@ -5,37 +5,39 @@
 /* ✅ Light mode defaults */
 :root {
   /* your palette */
-  --color-highlight: #55d26c;
-  --color-primary-900: #22262c;
-  --color-primary-700: #5c676d;
+  --color-primary-900: #2c3139;
+  --color-primary-700: #717b80;
   --color-primary-500: #9fb0b9;
   --color-primary-300: #c9dddf;
   --color-primary-100: #e0fbfc;
 
   /* semantic tokens (light) */
   --bg-main: var(--color-primary-100);
-  --bg-muted: var(--color-primary-300);
+  --bg-muted: #cee6f1;
+  --bg-hover: var(--color-primary-500);
+  --bg-highlight: #49a35a;
 
+  --text-highlight: #49a35a;
   --text-primary: var(--color-primary-900);
   --text-secondary: var(--color-primary-700);
-  --text-muted: var(--color-primary-500);
+  --text-muted: var(--color-primary-700);
 
   --border-default: var(--color-primary-500);
 }
 
 /* ✅ Dark mode overrides */
 .dark {
-  --bg-highlight: var(--color-highlight);
+  --bg-highlight: #4dbd61;
   --bg-main: var(--color-primary-900);
-  --bg-muted: #242a32;
   --bg-hover: var(--color-primary-700);
+  --bg-muted: #242a32;
 
   --surface-1: #2b3a40;
   --surface-2: #31434a;
 
   --border-default: rgba(157, 180, 192, 0.35);
 
-  --text-highlight: var(--color-highlight);
+  --text-highlight: #4dbd61;
   --text-primary: var(--color-primary-100);
   --text-secondary: var(--color-primary-300);
   --text-muted: var(--color-primary-500);
@@ -44,7 +46,7 @@
 @layer utilities {
   /* COLOR PALETE */
   .text-highlight {
-    color: var(--color-highlight);
+    color: var(--text-highlight);
   }
   .text-primary {
     color: var(--text-primary);
