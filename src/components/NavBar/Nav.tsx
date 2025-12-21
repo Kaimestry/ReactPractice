@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 import { IoIosNotifications } from "react-icons/io";
 import { BsThreeDots } from "react-icons/bs";
 import { NAV_GROUPS } from "./nav.config";
+import { APP_CONFIG } from "../../config/app.config";
 
 const Nav = () => {
-  const brand = "Health Journal";
   const user = "Kaimestry";
 
   return (
     <aside className="flex flex-col justify-between h-screen bg-muted px-2 py-2 gap-4">
       <div className="flex flex-col gap-3">
         {/* Header */}
-        <section className="flex gap-3 items-center font-bold">
-          <h1 className="text-highlight text-2xl">{brand}</h1>
+        <section className="flex justify-between gap-3 items-center font-bold">
+          <h1 className="text-highlight text-2xl">{APP_CONFIG.brand.name}</h1>
           <button className="action-icon">
             <IoIosNotifications />
           </button>
