@@ -40,7 +40,7 @@
   --text-highlight: #4dbd61;
   --text-primary: var(--color-primary-100);
   --text-secondary: var(--color-primary-300);
-  --text-muted: var(--color-primary-500);
+  --text-muted: var(--color-primary-700);
 }
 
 @layer utilities {
@@ -95,6 +95,8 @@
 
   /* REPORT ITEMS */
   .report-item {
-    @apply border flex-grow;
+    @apply flex-grow rounded-md p-4 flex justify-center;
+    background-color: var(--bg-muted);
+    height: 100px;
   }
 }
