@@ -1,4 +1,5 @@
 import { MdSpaceDashboard } from "react-icons/md";
+import { FaChartSimple } from "react-icons/fa6";
 import type { IconType } from "react-icons";
 
 export type NavItem = {
@@ -18,7 +19,7 @@ export const NAV_GROUPS = [
     title: "PLATFORM",
     items: [
       { label: "Dashboard", to: "/", icon: MdSpaceDashboard },
-      { label: "Profile", to: "/profile", icon: MdSpaceDashboard },
+      { label: "Report", to: "/report", icon: FaChartSimple },
       { label: "Activity Log", to: "/activity", icon: MdSpaceDashboard },
     ],
   },

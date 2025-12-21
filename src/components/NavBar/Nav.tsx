@@ -8,7 +8,7 @@ const Nav = () => {
   const user = "Kaimestry";
 
   return (
-    <aside className="flex flex-col justify-between h-screen bg-muted px-2 py-2 gap-4">
+    <aside className="flex flex-col justify-between h-screen min-w-56 bg-muted px-2 py-2 gap-4">
       <div className="flex flex-col gap-3">
         {/* Header */}
         <section className="flex justify-between gap-3 items-center font-bold">
