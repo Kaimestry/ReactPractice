@@ -97,6 +97,6 @@
   .report-item {
     @apply flex-grow rounded-md p-4 flex justify-center;
     background-color: var(--bg-muted);
-    height: 100px;
+    height: 300px;
   }
 }

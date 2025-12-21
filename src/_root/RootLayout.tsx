@@ -1,15 +1,19 @@
 import { Outlet } from "react-router-dom";
-import Nav from "../components/NavBar/Nav.tsx";
+import Nav from "../components/NavBar/Nav";
+
 const RootLayout = () => {
   return (
-    <div className="flex bg-main text-primary">
-      <Nav></Nav>
-      <div className="flex min-h-full w-screen justify-center m-6 border">
-        <div className="flex h-fit justify-center border">
+    <div className="flex h-screen bg-main text-primary">
+      <Nav />
+
+      {/* BIG CONTAINER (scrollable) */}
+      <div className="flex-1 overflow-y-auto">
+        <div className="flex justify-center p-6">
           <Outlet />
         </div>
       </div>
     </div>
   );
 };
+
 export default RootLayout;
