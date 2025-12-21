@@ -4,9 +4,11 @@ const RootLayout = () => {
   return (
     <div className="flex bg-main text-primary">
       <Nav></Nav>
-      <section className="flex min-h-96 justify-center items-center">
-        <Outlet />
-      </section>
+      <div className="flex min-h-full w-screen justify-center m-6 border">
+        <div className="flex h-fit justify-center border">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 };

@@ -86,12 +86,15 @@
   .nav-title {
     @apply text-xs text-muted ml-2;
   }
-
-  /* action icon */
   .action-icon {
     @apply p-2 rounded-md;
   }
   .action-icon:hover {
     background-color: var(--bg-hover);
+  }
+
+  /* REPORT ITEMS */
+  .report-item {
+    @apply border flex-grow;
   }
 }
