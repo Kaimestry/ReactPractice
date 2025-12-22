@@ -1,25 +1,28 @@
 import { Link } from "react-router-dom";
-import { TbLayoutSidebarLeftCollapseFilled } from "react-icons/tb";
 import { BsThreeDots } from "react-icons/bs";
 import { NAV_GROUPS } from "./nav.config";
 import { APP_CONFIG } from "../../config/app.config";
+import ToggleNav from "./ToggleNav";
+import { useState } from "react";
 
 const Nav = () => {
   const user = "Kaimestry";
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <aside className="flex flex-col justify-between h-screen min-w-56 bg-muted px-2 py-2 gap-4">
+    <aside className={`nav-sidebar ${collapsed ? "collapsed" : ""}`}>
       <div className="flex flex-col gap-3">
         {/* Header */}
         <section className="flex justify-between gap-3 items-center font-bold">
           <h1 className="text-highlight text-2xl">{APP_CONFIG.brand.name}</h1>
-          <button className="action-icon">
-            <TbLayoutSidebarLeftCollapseFilled />
-          </button>
+          <ToggleNav
+            open={!collapsed}
+            onToggle={(open) => setCollapsed(!open)}
+          />
         </section>
 
         {/* Navigation */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 ">
           {NAV_GROUPS.map((group) => (
             <nav key={group.title} className="flex flex-col">
               <h2 className="nav-title">{group.title}</h2>
@@ -32,8 +35,10 @@ const Nav = () => {
                     item.variant === "action" ? "nav-link-action" : "nav-link"
                   }
                 >
-                  <item.icon />
-                  {item.label}
+                  <span>
+                    <item.icon />
+                  </span>
+                  <p>{item.label}</p>
                 </Link>
               ))}
             </nav>
@@ -42,7 +47,7 @@ const Nav = () => {
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mx-2">
         <figure className="flex items-center gap-2">
           <img
             src=""

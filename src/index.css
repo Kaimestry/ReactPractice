@@ -70,27 +70,66 @@
 }
 
 @layer components {
+  .nav-sidebar {
+    @apply flex flex-col justify-between h-screen gap-4 bg-muted p-2 w-56  flex-shrink-0;
+    transition: width 0.2s ease;
+    overflow: hidden;
+  }
+  .nav-sidebar.collapsed {
+    width: 53px;
+  }
+  .nav-sidebar.collapsed section {
+    @apply flex justify-center pt-2;
+  }
+  .nav-sidebar.collapsed .nav-title {
+    opacity: 0;
+  }
+
+  /* Hide labels only when collapsed */
+  .nav-sidebar.collapsed section h1,
+  .nav-sidebar.collapsed .nav-link p,
+  .nav-sidebar.collapsed .nav-link-action p,
+  .nav-sidebar.collapsed figure {
+    display: none;
+  }
+
   /* NAV LINK */
   .nav-link {
     @apply text-sm flex items-center gap-2 px-2 py-2 rounded-md w-full;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* optional */
   }
   .nav-link:hover {
     background-color: var(--bg-hover);
   }
+
   .nav-link-action {
     @apply text-sm flex items-center justify-center mt-1 gap-1 px-2 py-2 rounded-md
     bg-highlight font-semibold
     hover:opacity-80;
     color: var(--bg-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* optional */
+  }
+  .nav-link span,
+  .nav-link-action span {
+    @apply text-xl;
   }
   .nav-title {
     @apply text-xs text-muted ml-2;
   }
+  .nav-sidebar section h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* optional */
+  }
   .action-icon {
-    @apply p-2 rounded-md;
+    @apply text-2xl rounded-md;
   }
   .action-icon:hover {
-    background-color: var(--bg-hover);
+    color: var(--bg-highlight);
   }
 
   /* REPORT ITEMS */

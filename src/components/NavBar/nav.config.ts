@@ -21,7 +21,8 @@ export const NAV_GROUPS = [
     items: [
       { label: "Dashboard", to: "/", icon: MdSpaceDashboard },
       { label: "Report", to: "/report", icon: FaChartSimple },
-      { label: "Activity Log", to: "/activity", icon: MdSpaceDashboard },
+      { label: "Activity Log", to: "/test", icon: MdSpaceDashboard },
+      { label: "Test Ground", to: "/test", icon: MdSpaceDashboard },
     ],
   },
   {

@@ -1,23 +1,46 @@
 import { useState } from "react";
 
-const ToggleButton = () => {
-  const [state, setState] = useState(true);
+type ToggleButtonProps = {
+  /** Initial state */
+  defaultValue?: boolean;
 
-  const toggleEvent = () => {
-    setState((prev) => !prev);
+  /** Called whenever toggle changes */
+  onToggle?: (value: boolean) => void;
+
+  /** Custom button class */
+  className?: string;
+
+  /** Button content (icon / text / JSX) */
+  children: React.ReactNode | ((state: boolean) => React.ReactNode);
+};
+
+const ToggleButton = ({
+  defaultValue = false,
+  onToggle,
+  className = "",
+  children,
+}: ToggleButtonProps) => {
+  const [state, setState] = useState(defaultValue);
+
+  const toggle = () => {
+    setState((prev) => {
+      const next = !prev;
+      onToggle?.(next);
+      return next;
+    });
   };
 
+  const content = typeof children === "function" ? children(state) : children;
+
   return (
-    <div>
-      <p>{state ? "close" : "open"}</p>
-      <button
-        className="bg-green-500 px-4 py-2 rounded text-white"
-        type="button"
-        onClick={toggleEvent}
-      >
-        Button
-      </button>
-    </div>
+    <button
+      type="button"
+      onClick={toggle}
+      className={`${className} ${state ? "active" : ""}`}
+      aria-pressed={state}
+    >
+      {content}
+    </button>
   );
 };
 
