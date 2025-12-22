@@ -95,22 +95,30 @@
 
   /* REPORT ITEMS */
   .report-block {
-    @apply flex-grow rounded-md p-4 flex flex-col justify-center;
+    @apply rounded-md p-4 flex flex-col;
     background-color: var(--bg-muted);
-    max-height: 300px;
+    max-height: 290px;
+    flex-grow: 1;
+  }
+
+  .report-block.priority {
+    flex-grow: 2; /* 🆕 PRIORITY */
   }
 
   .block-title {
-    @apply text-left font-semibold text-highlight flex justify-between items-center;
+    @apply text-left font-semibold flex justify-between items-center;
   }
 
   /* metrics */
   .report-metric {
-    @apply w-32;
+    @apply flex flex-col justify-between;
+    aspect-ratio: 3 / 1; /* width / height */
+    max-height: 100px;
+    min-width: 120px;
   }
 
   /* charts */
   .report-chart {
-    @apply w-[250px];
+    @apply w-1/4 min-w-[300px] max-w-[500px]; /* 🔧 CHANGED */
   }
 }

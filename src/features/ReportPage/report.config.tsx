@@ -16,6 +16,7 @@ export type ReportContainer = {
   title: string;
   badge?: string;
   data: ReportItem[];
+  priority?: boolean;
 };
 
 export const REPORT = [
@@ -25,6 +26,7 @@ export const REPORT = [
     type: "metric",
     title: "Total of XX",
     badge: "Sample",
+    priority: false,
     data: [
       {
         id: "total-value",
@@ -53,6 +55,18 @@ export const REPORT = [
       {
         id: "total-value",
         content: <span className="text-3xl font-bold">917</span>,
+      },
+    ],
+  },
+  {
+    id: "total-aa",
+    type: "metric",
+    title: "Total of aa",
+    badge: "Sample",
+    data: [
+      {
+        id: "total-value",
+        content: <span className="text-3xl font-bold">9107</span>,
       },
     ],
   },

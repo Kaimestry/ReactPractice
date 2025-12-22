@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { IoIosNotifications } from "react-icons/io";
+import { TbLayoutSidebarLeftCollapseFilled } from "react-icons/tb";
 import { BsThreeDots } from "react-icons/bs";
 import { NAV_GROUPS } from "./nav.config";
 import { APP_CONFIG } from "../../config/app.config";
@@ -14,7 +14,7 @@ const Nav = () => {
         <section className="flex justify-between gap-3 items-center font-bold">
           <h1 className="text-highlight text-2xl">{APP_CONFIG.brand.name}</h1>
           <button className="action-icon">
-            <IoIosNotifications />
+            <TbLayoutSidebarLeftCollapseFilled />
           </button>
         </section>
 

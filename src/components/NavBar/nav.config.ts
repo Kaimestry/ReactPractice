@@ -1,4 +1,5 @@
 import { MdSpaceDashboard } from "react-icons/md";
+import { RiChatAiFill } from "react-icons/ri";
 import { FaChartSimple } from "react-icons/fa6";
 import type { IconType } from "react-icons";
 
@@ -16,7 +17,7 @@ export type NavGroup = {
 
 export const NAV_GROUPS = [
   {
-    title: "PLATFORM",
+    title: "OVERVIEW",
     items: [
       { label: "Dashboard", to: "/", icon: MdSpaceDashboard },
       { label: "Report", to: "/report", icon: FaChartSimple },
@@ -26,7 +27,7 @@ export const NAV_GROUPS = [
   {
     title: "TOOLS",
     items: [
-      { label: "Dashboard", to: "/", icon: MdSpaceDashboard },
+      { label: "Chat Bot", to: "/", icon: RiChatAiFill },
       { label: "Profile", to: "/profile", icon: MdSpaceDashboard },
     ],
   },
