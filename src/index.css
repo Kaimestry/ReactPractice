@@ -70,6 +70,9 @@
 }
 
 @layer components {
+  /* =============
+  NAVIGATION 
+  ===============*/
   .nav-sidebar {
     @apply flex flex-col justify-between h-screen gap-4 bg-muted p-2 w-56  flex-shrink-0;
     transition: width 0.2s ease;
@@ -83,11 +86,15 @@
     overflow: hidden;
     text-overflow: ellipsis; /* optional */
   }
+
   .nav-link:hover,
   .nav-link-active {
     background-color: var(--bg-hover);
   }
 
+  /* 
+   NAV LINK (action)
+ */
   .nav-link-action {
     @apply text-sm flex items-center justify-center mt-1 gap-1 px-2 py-2 rounded-md
     bg-highlight font-semibold
@@ -98,31 +105,46 @@
     text-overflow: ellipsis; /* optional */
   }
 
+  /* 
+   ICONS
+ */
   .nav-link span,
   .nav-link-action span {
     @apply text-xl;
   }
+
+  .action-icon {
+    @apply text-2xl rounded-md;
+  }
+
+  .action-icon:hover {
+    color: var(--bg-highlight);
+  }
+
+  /* 
+   TITLES & TEXT
+ */
   .nav-title {
     @apply text-xs text-muted ml-2;
   }
+
   .nav-sidebar section h1 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; /* optional */
   }
-  .action-icon {
-    @apply text-2xl rounded-md;
-  }
-  .action-icon:hover {
-    color: var(--bg-highlight);
-  }
-  /* NAV COLLAPSE */
+
+  /* 
+   NAV SIDEBAR (collapsed)
+ */
   .nav-sidebar.collapsed {
     width: 53px;
   }
+
   .nav-sidebar.collapsed section {
     @apply flex justify-center pt-2;
   }
+
   .nav-sidebar.collapsed .nav-title {
     opacity: 0;
   }
@@ -130,15 +152,19 @@
   .nav-sidebar.collapsed .action-icon {
     color: var(--bg-highlight);
   }
-  /* Hide labels only when collapsed */
+
+  /* 
+   COLLAPSED VISIBILITY
+ */
   .nav-sidebar.collapsed section h1,
   .nav-sidebar.collapsed .nav-link p,
   .nav-sidebar.collapsed .nav-link-action p,
   .nav-sidebar.collapsed figure {
     display: none;
   }
-
-  /* REPORT ITEMS */
+  /* ===========
+  REPORT ITEMS 
+  ==============*/
   .report-block {
     @apply rounded-md p-4 flex flex-col;
     background-color: var(--bg-muted);
