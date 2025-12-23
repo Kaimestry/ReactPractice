@@ -7,7 +7,7 @@ const Header = () => {
   const route = useCurrentRoute(); // ✅ THIS WAS MISSING
 
   return (
-    <header className="flex items-center justify-between px-4 py-2 border-b">
+    <header className="flex items-center justify-between px-4 py-2">
       <PageTitle />
       <ControlBar
         controls={route && "controls" in route ? route.controls : []}

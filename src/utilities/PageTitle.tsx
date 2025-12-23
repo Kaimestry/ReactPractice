@@ -4,8 +4,10 @@ const PageTitle = () => {
   const route = useCurrentRoute();
 
   return (
-    <div className="border pl-4 pr-8 flex justify-between">
-      <div className=""> {route?.label ?? "Page"}</div>
+    <div className="flex justify-center items-center">
+      <h1 className="text-center font-bold text-xl">
+        {route?.label ?? "Page"}
+      </h1>
     </div>
   );
 };

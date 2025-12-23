@@ -24,9 +24,14 @@ export const ROUTES = {
     label: "Report",
     controls: [
       {
-        type: "button",
-        label: "Report Alert",
-        onClick: () => alert("Report control works! 📊"),
+        type: "date-range",
+        label: "Last 7 days",
+        value: {
+          start: "2025-01-01",
+          end: "2025-01-07",
+          preset: "7d",
+        },
+        onApply: (range) => alert(JSON.stringify(range, null, 2)),
       },
     ],
   },

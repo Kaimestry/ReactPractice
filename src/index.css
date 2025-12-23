@@ -67,6 +67,9 @@
   .bg-muted {
     background-color: var(--bg-muted);
   }
+  .bg-hover {
+    background-color: var(--bg-hover);
+  }
 }
 
 @layer components {

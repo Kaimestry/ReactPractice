@@ -21,18 +21,21 @@ export const DateRangeControl = ({ label, value, onApply }: Props) => {
 
   return (
     <div className="relative">
-      {/* Trigger */}
-      <button
-        className="px-3 py-1 text-sm rounded-md bg-muted hover:bg-highlight"
-        onClick={() => setOpen(!open)}
-      >
-        📅 {label}
-      </button>
+      <div className="flex gap-2 items-center ">
+        <h2 className="text-sm text-gray-500 font-semibold">Time Period:</h2>
+        {/* Trigger */}
+        <button
+          className="px-3 py-1 text-sm rounded-md bg-muted hover:bg-hover"
+          onClick={() => setOpen(!open)}
+        >
+          {label}
+        </button>
+      </div>
 
       {/* Popover */}
       {open && (
         <div className="absolute right-0 mt-2 w-64 rounded-md border bg-main p-3 shadow-lg z-50">
-          <div className="text-sm font-semibold mb-2">Period</div>
+          <div className="text-sm text-gray-500 font-semibold mb-2">Period</div>
 
           {/* Presets */}
           <div className="flex flex-col gap-1 mb-2">
@@ -48,7 +51,7 @@ export const DateRangeControl = ({ label, value, onApply }: Props) => {
           </div>
 
           {/* Custom range */}
-          <div className="flex flex-col gap-2 text-sm">
+          <div className="flex flex-col gap-2 text-sm text-gray-500 font-semibold">
             <label>
               From
               <input
@@ -61,7 +64,7 @@ export const DateRangeControl = ({ label, value, onApply }: Props) => {
                     preset: "custom",
                   })
                 }
-                className="w-full border rounded px-2 py-1"
+                className="w-full text-primary font-light bg-muted rounded px-2 py-1 "
               />
             </label>
 
@@ -73,7 +76,7 @@ export const DateRangeControl = ({ label, value, onApply }: Props) => {
                 onChange={(e) =>
                   setLocal({ ...local, end: e.target.value, preset: "custom" })
                 }
-                className="w-full border rounded px-2 py-1"
+                className="w-full text-primary font-light bg-muted rounded px-2 py-1"
               />
             </label>
           </div>
@@ -81,13 +84,13 @@ export const DateRangeControl = ({ label, value, onApply }: Props) => {
           {/* Actions */}
           <div className="flex justify-end gap-2 mt-3">
             <button
-              className="text-sm px-2 py-1"
+              className="text-sm  px-3 py-1 rounded hover:bg-muted"
               onClick={() => setOpen(false)}
             >
               Cancel
             </button>
             <button
-              className="text-sm px-3 py-1 rounded bg-highlight text-black"
+              className="text-sm px-3 py-1 rounded bg-highlight text-gray-900 hover:opacity-80"
               onClick={() => {
                 onApply(local);
                 setOpen(false);

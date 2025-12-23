@@ -20,7 +20,7 @@ export const ControlBar = ({ controls }: { controls?: ControlItem[] }) => {
           case "button":
             return (
               <button
-                className="bg-highlight p-2 font-bold text-sm text-gray-800 rounded-md"
+                className="bg-highlight px-2 py-0.5 font-bold text-sm text-gray-800 rounded-md"
                 key={control.label}
                 onClick={control.onClick}
               >
