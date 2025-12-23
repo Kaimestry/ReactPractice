@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Nav from "../components/NavBar/Nav";
-import ControlBar from "../components/ControlBar/ControlBar";
+import Header from "../components/Header/Header";
 
 const RootLayout = () => {
   return (
@@ -8,7 +8,7 @@ const RootLayout = () => {
       <Nav />
 
       <div className="flex flex-col">
-        <ControlBar />
+        <Header />
         <div className="flex-1 overflow-y-auto">
           <div className="flex justify-center p-4">
             <Outlet />
