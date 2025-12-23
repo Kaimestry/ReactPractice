@@ -3,7 +3,7 @@ import type { IconType } from "react-icons";
 import { MdSpaceDashboard } from "react-icons/md";
 import { RiChatAiFill } from "react-icons/ri";
 import { FaChartSimple } from "react-icons/fa6";
-
+import { BiSolidHome } from "react-icons/bi";
 import { ROUTES } from "../../routes.config";
 
 /* ---------------- TYPES ---------------- */
@@ -34,7 +34,7 @@ export const NAV_GROUPS = [
   {
     title: "OVERVIEW",
     items: [
-      { type: "route", route: ROUTES.dashboard, icon: MdSpaceDashboard },
+      { type: "route", route: ROUTES.dashboard, icon: BiSolidHome },
       { type: "route", route: ROUTES.report, icon: FaChartSimple },
       { type: "route", route: ROUTES.test, icon: MdSpaceDashboard },
     ],
