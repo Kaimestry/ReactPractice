@@ -1,4 +1,4 @@
-import ToggleButton from "../../components/ToggleButton";
+import ToggleButton from "../../utilities/ToggleButton";
 
 const Test = () => {
   return <div>sdf</div>;

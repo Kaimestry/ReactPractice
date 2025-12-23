@@ -1,5 +1,5 @@
 // Header.tsx
-import { ControlBar } from "../../utilities/ControlBar";
+import { ControlBar } from "../../utilities/ControlBar/ControlBar";
 import PageTitle from "../../utilities/PageTitle";
 import { useCurrentRoute } from "../../hooks/useCurrentRoute";
 

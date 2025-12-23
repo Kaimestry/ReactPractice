@@ -1,4 +1,4 @@
-import ToggleButton from "../ToggleButton";
+import ToggleButton from "../../utilities/ToggleButton";
 import { TbLayoutSidebarLeftCollapseFilled } from "react-icons/tb";
 
 type ToggleNavProps = {

@@ -1,16 +1,5 @@
 // routes.config.ts
-export type ControlItem =
-  | {
-      type: "button";
-      label: string;
-      onClick: () => void;
-    }
-  | {
-      type: "toggle";
-      label: string;
-      value: boolean;
-      onChange: (v: boolean) => void;
-    };
+import type { ControlItem } from "./utilities/ControlBar/types/control.types";
 
 export type AppRoute = {
   path: string;
@@ -44,15 +33,27 @@ export const ROUTES = {
   profile: {
     path: "/profile",
     label: "Profile",
+    controls: [
+      {
+        type: "button",
+        label: "Report Alert",
+        onClick: () => alert("Report control works! 📊"),
+      },
+    ],
   },
   test: {
     path: "/test",
     label: "Test Ground",
     controls: [
       {
-        type: "button",
-        label: "Test Ground Action",
-        onClick: () => alert("Hello from Test Ground 🧪"),
+        type: "date-range",
+        label: "Last 7 days",
+        value: {
+          start: "2025-01-01",
+          end: "2025-01-07",
+          preset: "7d",
+        },
+        onApply: (range) => alert(JSON.stringify(range, null, 2)),
       },
     ],
   },
