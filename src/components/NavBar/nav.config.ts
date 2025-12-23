@@ -1,46 +1,63 @@
+// nav.config.ts
+import type { IconType } from "react-icons";
 import { MdSpaceDashboard } from "react-icons/md";
 import { RiChatAiFill } from "react-icons/ri";
 import { FaChartSimple } from "react-icons/fa6";
-import type { IconType } from "react-icons";
 
-export type NavItem = {
-  label: string;
-  to: string;
+import { ROUTES } from "../../routes.config";
+
+/* ---------------- TYPES ---------------- */
+
+type RouteNavItem = {
+  type: "route";
+  route: (typeof ROUTES)[keyof typeof ROUTES];
   icon: IconType;
-  variant?: "default" | "action";
 };
+
+type ActionNavItem = {
+  type: "action";
+  label: string;
+  icon: IconType;
+  onClick: () => void;
+};
+
+export type NavItem = RouteNavItem | ActionNavItem;
 
 export type NavGroup = {
   title: string;
   items: NavItem[];
 };
 
+/* ---------------- DATA ---------------- */
+
 export const NAV_GROUPS = [
   {
     title: "OVERVIEW",
     items: [
-      { label: "Dashboard", to: "/", icon: MdSpaceDashboard },
-      { label: "Report", to: "/report", icon: FaChartSimple },
-      { label: "Activity Log", to: "/test", icon: MdSpaceDashboard },
-      { label: "Test Ground", to: "/test", icon: MdSpaceDashboard },
+      { type: "route", route: ROUTES.dashboard, icon: MdSpaceDashboard },
+      { type: "route", route: ROUTES.report, icon: FaChartSimple },
+      { type: "route", route: ROUTES.test, icon: MdSpaceDashboard },
+    ],
+  },
+  {
+    title: "Test",
+    items: [
+      { type: "route", route: ROUTES.dashboard, icon: MdSpaceDashboard },
+      { type: "route", route: ROUTES.report, icon: FaChartSimple },
+      { type: "route", route: ROUTES.test, icon: MdSpaceDashboard },
     ],
   },
   {
     title: "TOOLS",
     items: [
-      { label: "Chat Bot", to: "/", icon: RiChatAiFill },
-      { label: "Profile", to: "/profile", icon: MdSpaceDashboard },
-    ],
-  },
-  {
-    title: "ACTIONS",
-    items: [
-      { label: "Profile", to: "/profile", icon: MdSpaceDashboard },
+      { type: "route", route: ROUTES.profile, icon: MdSpaceDashboard },
       {
-        label: "New Entry",
-        to: "/journal/new",
-        icon: MdSpaceDashboard,
-        variant: "action",
+        type: "action",
+        label: "Chat Bot",
+        icon: RiChatAiFill,
+        onClick: () => {
+          console.log("Open Chat Bot");
+        },
       },
     ],
   },

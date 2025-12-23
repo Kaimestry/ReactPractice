@@ -83,7 +83,8 @@
     overflow: hidden;
     text-overflow: ellipsis; /* optional */
   }
-  .nav-link:hover {
+  .nav-link:hover,
+  .nav-link-active {
     background-color: var(--bg-hover);
   }
 
@@ -96,6 +97,7 @@
     overflow: hidden;
     text-overflow: ellipsis; /* optional */
   }
+
   .nav-link span,
   .nav-link-action span {
     @apply text-xl;

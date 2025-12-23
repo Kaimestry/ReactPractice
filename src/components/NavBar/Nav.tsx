@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+// Nav.tsx
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
+
 import { NAV_GROUPS } from "./nav.config";
 import { APP_CONFIG } from "../../config/app.config";
 import ToggleNav from "./ToggleNav";
-import { useState } from "react";
 
 const Nav = () => {
   const user = "Kaimestry";
@@ -22,25 +24,47 @@ const Nav = () => {
         </section>
 
         {/* Navigation */}
-        <div className="flex flex-col gap-4 ">
+        <div className="flex flex-col gap-4">
           {NAV_GROUPS.map((group) => (
-            <nav key={group.title} className="flex flex-col">
+            <nav key={group.title} className="flex flex-col gap-1">
               <h2 className="nav-title">{group.title}</h2>
 
-              {group.items.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className={
-                    item.variant === "action" ? "nav-link-action" : "nav-link"
-                  }
-                >
-                  <span>
-                    <item.icon />
-                  </span>
-                  <p>{item.label}</p>
-                </Link>
-              ))}
+              {group.items.map((item, index) => {
+                // ACTION ITEM
+                if (item.type === "action") {
+                  return (
+                    <button
+                      key={index}
+                      onClick={item.onClick}
+                      className="nav-link-action"
+                    >
+                      <span>
+                        <item.icon />
+                      </span>
+                      <p>{item.label}</p>
+                    </button>
+                  );
+                }
+
+                // ROUTE ITEM
+                const { path, label } = item.route;
+                const Icon = item.icon;
+
+                return (
+                  <NavLink
+                    key={path}
+                    to={path}
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? "nav-link-active" : ""}`
+                    }
+                  >
+                    <span>
+                      <Icon />
+                    </span>
+                    <p>{label}</p>
+                  </NavLink>
+                );
+              })}
             </nav>
           ))}
         </div>
@@ -49,11 +73,7 @@ const Nav = () => {
       {/* Footer */}
       <div className="flex items-center justify-between mx-2">
         <figure className="flex items-center gap-2">
-          <img
-            src=""
-            alt="User avatar"
-            className="w-10 h-10 rounded-full bg-highlight"
-          />
+          <div className="w-10 h-10 rounded-full bg-highlight" />
           <figcaption className="font-semibold">{user}</figcaption>
         </figure>
 

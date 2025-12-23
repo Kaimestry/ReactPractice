@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 
 import RootLayout from "./_root/RootLayout";
@@ -12,12 +12,15 @@ function App() {
     <Routes>
       {/*Public Route*/}
 
-      {/*Private Route*/}
+      {/* Private Route */}
       <Route element={<RootLayout />}>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/report" element={<Report />} />
-        <Route path="/test" element={<Test />} />
+        {/* DEFAULT */}
+        <Route index element={<Navigate to="/dashboard" replace />} />
+
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="report" element={<Report />} />
+        <Route path="test" element={<Test />} />
       </Route>
     </Routes>
   );
