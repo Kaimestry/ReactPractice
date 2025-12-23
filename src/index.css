@@ -6,7 +6,7 @@
 :root {
   /* your palette */
   --color-primary-900: #2c3139;
-  --color-primary-700: #717b80;
+  --color-primary-700: #52595c;
   --color-primary-500: #9fb0b9;
   --color-primary-300: #c9dddf;
   --color-primary-100: #e0fbfc;
@@ -134,6 +134,11 @@
     text-overflow: ellipsis; /* optional */
   }
 
+  .collapsed-title {
+    @apply text-xs text-muted ml-2;
+    display: none;
+  }
+
   /* 
    NAV SIDEBAR (collapsed)
  */
@@ -145,12 +150,12 @@
     @apply flex justify-center pt-2;
   }
 
-  .nav-sidebar.collapsed .nav-title {
-    opacity: 0;
-  }
-
   .nav-sidebar.collapsed .action-icon {
     color: var(--bg-highlight);
+  }
+
+  .nav-sidebar.collapsed .collapsed-title {
+    display: block;
   }
 
   /* 
@@ -159,7 +164,8 @@
   .nav-sidebar.collapsed section h1,
   .nav-sidebar.collapsed .nav-link p,
   .nav-sidebar.collapsed .nav-link-action p,
-  .nav-sidebar.collapsed figure {
+  .nav-sidebar.collapsed figure,
+  .nav-sidebar.collapsed .nav-title {
     display: none;
   }
   /* ===========

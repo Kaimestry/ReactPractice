@@ -40,14 +40,6 @@ export const NAV_GROUPS = [
     ],
   },
   {
-    title: "Test",
-    items: [
-      { type: "route", route: ROUTES.dashboard, icon: MdSpaceDashboard },
-      { type: "route", route: ROUTES.report, icon: FaChartSimple },
-      { type: "route", route: ROUTES.test, icon: MdSpaceDashboard },
-    ],
-  },
-  {
     title: "TOOLS",
     items: [
       { type: "route", route: ROUTES.profile, icon: MdSpaceDashboard },

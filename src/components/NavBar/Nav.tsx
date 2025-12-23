@@ -24,10 +24,11 @@ const Nav = () => {
         </section>
 
         {/* Navigation */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
           {NAV_GROUPS.map((group) => (
-            <nav key={group.title} className="flex flex-col gap-1">
+            <nav key={group.title} className="flex flex-col gap-2">
               <h2 className="nav-title">{group.title}</h2>
+              <h2 className="collapsed-title">----</h2>
 
               {group.items.map((item, index) => {
                 // ACTION ITEM
