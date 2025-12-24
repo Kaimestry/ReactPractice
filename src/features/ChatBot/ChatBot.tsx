@@ -4,25 +4,32 @@ import { TbMessageChatbotFilled } from "react-icons/tb";
 import { RiAddBoxFill } from "react-icons/ri";
 import { FaMicrophone } from "react-icons/fa";
 import { RiSendPlane2Fill } from "react-icons/ri";
+import { BsThreeDots } from "react-icons/bs";
+
 import { CHAT_MSG } from "./ChatBotMsg.config";
 
 const ChatBot = () => {
   return (
-    <aside className="chatbot-sidebar flex flex-col justify-between items-center">
-      <div className="flex flex-col gap-3">
+    <aside className="chatbot-sidebar flex flex-col justify-between items-stretch">
+      <div className="flex flex-col gap-3 ">
         {/* HEADER */}
-        <div className="pb-2 relative flex justify-center items-center font-bold border-b-2 border-[#52595c]">
-          <button className="absolute left-0 action-icon">
+        <div className="pb-2 flex justify-between items-center font-bold border-b-2 border-[#52595c]">
+          <button className="left-0 action-icon">
             <TbLayoutSidebarLeftExpandFilled />
           </button>
+
           <h1 className="flex justify-center items-center text-highlight text-2xl">
             {APP_CONFIG.chatbot.name}
             <TbMessageChatbotFilled />
           </h1>
+
+          <button className="action-icon text-lg">
+            <BsThreeDots />
+          </button>
         </div>
 
         {/* CHAT  */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col flex-1 min-h-0 max-h-[550px] gap-2 overflow-y-auto hide-scrollbar">
           {CHAT_MSG.map((chat) => (
             <p
               key={chat.id}

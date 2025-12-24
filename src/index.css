@@ -223,12 +223,14 @@
   CHATBOT
   ==============*/
   .chatbot-sidebar {
-    @apply flex flex-col h-screen gap-2 bg-muted py-2 px-3  flex-shrink-0;
+    @apply flex flex-col h-screen gap-2 bg-muted py-2 px-3 flex-shrink-0;
+    width: 340px;
   }
 
   /* text styling */
   .chat-text {
-    @apply py-1 px-4 rounded-md inline-block w-fit text-sm;
+    @apply py-1 px-4 rounded-md inline-block w-fit text-xs;
+    max-width: 200px;
   }
 
   .chat-text.chat-bot {
