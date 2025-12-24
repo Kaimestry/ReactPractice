@@ -48,7 +48,7 @@ export const NAV_GROUPS = [
         label: "Chat Bot",
         icon: RiChatAiFill,
         onClick: () => {
-          console.log("Open Chat Bot");
+          location.reload();
         },
       },
     ],
