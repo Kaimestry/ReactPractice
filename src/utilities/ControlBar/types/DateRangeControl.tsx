@@ -64,7 +64,6 @@ export const DateRangeControl = ({ label, value, onApply }: Props) => {
                     preset: "custom",
                   })
                 }
-                className="w-full text-primary font-light bg-muted rounded px-2 py-1 "
               />
             </label>
 
@@ -76,7 +75,6 @@ export const DateRangeControl = ({ label, value, onApply }: Props) => {
                 onChange={(e) =>
                   setLocal({ ...local, end: e.target.value, preset: "custom" })
                 }
-                className="w-full text-primary font-light bg-muted rounded px-2 py-1"
               />
             </label>
           </div>

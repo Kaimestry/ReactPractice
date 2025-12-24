@@ -84,6 +84,13 @@
 
 @layer components {
   /* =============
+  vanila components
+  ===============*/
+  input {
+    @apply w-full text-primary font-light bg-muted rounded px-2 py-1 outline-none focus:outline-none focus:ring-0;
+  }
+
+  /* =============
   NAVIGATION
   ===============*/
   .nav-sidebar {
@@ -216,6 +223,18 @@
   CHATBOT
   ==============*/
   .chatbot-sidebar {
-    @apply flex flex-col justify-between h-screen gap-4 bg-muted p-2 w-80  flex-shrink-0;
+    @apply flex flex-col h-screen gap-2 bg-muted py-2 px-3  flex-shrink-0;
+  }
+
+  /* text styling */
+  .chat-text {
+    @apply py-1 px-4 rounded-md inline-block w-fit text-sm;
+  }
+
+  .chat-text.chat-bot {
+    @apply bg-main self-start;
+  }
+  .chat-text.chat-user {
+    @apply bg-highlight text-gray-800 self-end;
   }
 }

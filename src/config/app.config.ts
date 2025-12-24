@@ -10,8 +10,7 @@ export const APP_CONFIG = {
     name: "Kaimestry",
   },
 
-  urls: {
-    website: "https://healthjournal.app",
-    supportEmail: "support@healthjournal.app",
+  chatbot: {
+    name: "Buddy Bot",
   },
 } as const;
