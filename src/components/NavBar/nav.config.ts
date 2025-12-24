@@ -4,7 +4,7 @@ import { MdSpaceDashboard } from "react-icons/md";
 import { RiChatAiFill } from "react-icons/ri";
 import { FaChartSimple } from "react-icons/fa6";
 import { BiSolidHome } from "react-icons/bi";
-import { ROUTES } from "../../routes.config";
+import { ROUTES } from "../../config/routes.config";
 
 /* ---------------- TYPES ---------------- */
 

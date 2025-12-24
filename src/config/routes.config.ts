@@ -1,5 +1,5 @@
 // routes.config.ts
-import type { ControlItem } from "./utilities/ControlBar/types/control.types";
+import type { ControlItem } from "../utilities/ControlBar/types/control.types";
 
 export type AppRoute = {
   path: string;
