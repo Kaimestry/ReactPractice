@@ -43,6 +43,16 @@
   --text-muted: var(--color-primary-700);
 }
 
+/* Hide scrollbar but allow scroll */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome / Safari */
+}
+
 @layer utilities {
   /* COLOR PALETE */
   .text-highlight {
@@ -74,7 +84,7 @@
 
 @layer components {
   /* =============
-  NAVIGATION 
+  NAVIGATION
   ===============*/
   .nav-sidebar {
     @apply flex flex-col justify-between h-screen gap-4 bg-muted p-2 w-56  flex-shrink-0;
@@ -200,5 +210,12 @@
   /* charts */
   .report-chart {
     @apply w-1/4 min-w-[300px] max-w-[500px]; /* 🔧 CHANGED */
+  }
+
+  /* ===========
+  CHATBOT
+  ==============*/
+  .chatbot-sidebar {
+    @apply flex flex-col justify-between h-screen gap-4 bg-muted p-2 w-80  flex-shrink-0;
   }
 }
