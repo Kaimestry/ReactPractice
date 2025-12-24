@@ -223,13 +223,13 @@
   CHATBOT
   ==============*/
   .chatbot-sidebar {
-    @apply flex flex-col h-screen gap-2 bg-muted py-2 px-3 flex-shrink-0;
-    width: 340px;
+    @apply flex flex-col h-screen justify-between gap-2 bg-muted py-2 px-3 flex-shrink-0;
+    transition: width 0.3s ease, transform 0.3s ease, border-radius 0.3s ease;
   }
 
   /* text styling */
   .chat-text {
-    @apply py-1 px-4 rounded-md inline-block w-fit text-xs;
+    @apply py-1 px-4 rounded-md w-fit text-xs flex flex-col justify-between items-stretch;
     max-width: 200px;
   }
 
@@ -238,5 +238,23 @@
   }
   .chat-text.chat-user {
     @apply bg-highlight text-gray-800 self-end;
+  }
+
+  /* COLLAPSED STYLING */
+  .chatbot-sidebar.collapsed {
+    @apply absolute w-[80px] h-fit bottom-0 right-0 rounded-lg;
+    border: 4px solid var(--bg-main);
+  }
+
+  .chatbot-sidebar.collapsed #chatbox-header {
+    @apply p-0;
+    border: none;
+  }
+
+  .chatbot-sidebar.collapsed h1,
+  .chatbot-sidebar.collapsed #chatbot-setting,
+  .chatbot-sidebar.collapsed #chat-container,
+  .chatbot-sidebar.collapsed #chatbox-user-input {
+    display: none;
   }
 }
