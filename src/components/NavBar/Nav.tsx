@@ -9,7 +9,7 @@ import ToggleNav from "./ToggleNav";
 
 const Nav = () => {
   const user = "Kaimestry";
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true); // 👈 CLOSED by default
 
   return (
     <aside className={`nav-sidebar ${collapsed ? "collapsed" : ""}`}>

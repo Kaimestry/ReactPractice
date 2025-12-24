@@ -1,6 +1,7 @@
 import ToggleButton from "../../utilities/ToggleButton";
 import { TbLayoutSidebarLeftCollapseFilled } from "react-icons/tb";
 
+//! If want to change default state as open/close => change it inside Nav.tsx
 type ToggleNavProps = {
   open: boolean;
   onToggle: (open: boolean) => void;
@@ -8,11 +9,7 @@ type ToggleNavProps = {
 
 const ToggleNav = ({ open, onToggle }: ToggleNavProps) => {
   return (
-    <ToggleButton
-      defaultValue={open}
-      onToggle={onToggle}
-      className="action-icon"
-    >
+    <ToggleButton value={open} onToggle={onToggle} className="action-icon">
       {(isOpen) => (
         <TbLayoutSidebarLeftCollapseFilled
           className={`transition-transform ${
